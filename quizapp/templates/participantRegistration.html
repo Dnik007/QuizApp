@@ -1,0 +1,25 @@
+!<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Participant SIgn Up!</title>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+    <h1>Participant SignUP</h1>
+    {% if registered %}
+    <h3>Successfully Registered!</h3>
+    {% else %}
+    <form id="participant_form" action="/participantRegistration/" method="post">
+    {% csrf_token %}
+    {% participantForm.as_p %}
+    <button type="submit" name="submit" value= "Register"></button>
+    </form>
+    {% endif %}
+    <div class="login">
+      <a href="{%url 'participantlogin'%}"> Participant Login </a>
+
+    </div>
+  </body>
+</html>

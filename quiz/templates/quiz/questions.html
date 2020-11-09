@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<form action ="./result" method="post">
+  {% for que in ques %}
+  <h3>{{forloop.counter}}.{{que.question}}</h3>
+  <input type= "radio" name="{{que.id}}" value="{{que.optiona}}">
+  {{que.optiona}}
+  <input type= "radio" name="{{que.id}}" value="{{que.optionb}}">
+  {{que.optionb}}
+  <input type= "radio" name="{{que.id}}" value="{{que.optionc}}">
+  {{que.optionc}}
+  <input type= "radio" name="{{que.id}}" value="{{que.optiond}}">
+  {{que.optiond}}
+{% endfor %}
+{% csrf_token %}
+<<button type="submit" name="button">Result</button>

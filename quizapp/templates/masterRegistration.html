@@ -1,0 +1,25 @@
+!<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz Master SIgn Up!</title>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+    <h1>Master SignUP</h1>
+    {% if registered %}
+    <h3>Successfully Registered!</h3>
+    {% else %}
+    <form id="master_form" action="/masterRegistration/" method="post">
+    {% csrf_token %}
+    {% quizMasterForm.as_p %}
+    <button type="submit" name="submit" value= "Register"></button>
+    </form>
+    {% endif %}
+    <div class="login">
+      <a href="{%url 'masterlogin'%}"> Master Login </a>
+
+    </div>
+  </body>
+</html>
